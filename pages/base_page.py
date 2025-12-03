@@ -1,5 +1,5 @@
 class BasePage:
-    base_url = "https://saucedemo.com"
+    base_url = "https://www.saucedemo.com"
 
     def __init__(self, page, url=None):
         self.page = page

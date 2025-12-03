@@ -1,4 +1,4 @@
-class LoginPageData():
+class LoginPageData:
     valid_username = "standard_user"
     valid_password = "secret_sauce"
 
@@ -7,3 +7,6 @@ class LoginPageData():
 
     error_invalid_data = "Epic sadface: Username and password do not match any user in this service"
     error_unfilled_fields = "Epic sadface: Username is required"
+
+class InventoryPageData:
+    expected_products_count = 6
