@@ -12,3 +12,17 @@ class InventoryPageLocators:
     add_to_cart_button = "button[data-test^='add-to-cart-']"
 
     cart_button = "[data-test='shopping-cart-link']"
+
+class CartPageLocators:
+    checkout_button = "[data-test='checkout']"
+
+    first_name = "[data-test='firstName']"
+    last_name = "[data-test='lastName']"
+    postal_code = "[data-test='postalCode']"
+
+    continue_button = "[data-test='continue']"
+
+    finish_button = "[data-test='finish']"
+
+    successful_purchase_message = "[data-test='complete-header']"
+    back_home_button = "[data-test='back-to-products']"
