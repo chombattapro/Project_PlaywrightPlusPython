@@ -1,6 +1,11 @@
 import pytest
 from playwright.sync_api import Page
 from pages.login_page import LoginPage
+from faker import Faker
+
+@pytest.fixture(scope="function")
+def faker():
+    return Faker()
 
 @pytest.fixture(scope="function")
 def login(page: Page):
