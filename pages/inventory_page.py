@@ -7,16 +7,20 @@ class InventoryPage(BasePage):
     url = f"{BasePage.base_url}/inventory.html"
 
     def verify_products_count(self, expected_count):
-        product = self.page.locator(InventoryPageLocators.product)
-        expect(product).to_have_count(expected_count)
+        product_card_counter = self.page.locator(InventoryPageLocators.product_card)
+        expect(product_card_counter).to_have_count(expected_count)
 
-    def verify_first_product_elements(self):
-        title = self.page.locator(InventoryPageLocators.product_title_first)
+    def verify_product_card(self, card_index):
+        """
+        Берем конкретную карточку по индексу и проверяем элементы внутри этой карточки
+        """
+        product_card = self.page.locator(InventoryPageLocators.product_card).nth(card_index)
+        title = product_card.locator(InventoryPageLocators.product_title)
         expect(title).to_be_visible()
         expect(title).to_be_enabled()
-        price = self.page.locator(InventoryPageLocators.product_price_first).first
+        price = product_card.locator(InventoryPageLocators.product_price)
         expect(price).to_be_visible()
-        add_to_cart_button = self.page.locator(InventoryPageLocators.product_btn_add_to_cart_first)
+        add_to_cart_button = product_card.locator(InventoryPageLocators.add_to_cart_button)
         expect(add_to_cart_button).to_be_visible()
         expect(add_to_cart_button).to_be_enabled()
 
