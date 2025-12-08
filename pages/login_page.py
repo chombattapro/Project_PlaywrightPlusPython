@@ -17,13 +17,11 @@ class LoginPage(BasePage):
         self.page.locator(LoginPageLocators.login_button).click()
 
     def check_error_with_invalid_data(self):
-        result = self.page.locator(LoginPageLocators.error_invalid_data)
-        expect(result).to_have_text(LoginPageErrors.error_invalid_data)
+        error_message1 = self.page.locator(LoginPageLocators.error_data)
+        expect(error_message1).to_have_text(LoginPageErrors.error_invalid_data)
 
     def check_error_with_unfilled_fields(self):
         self.page.locator(LoginPageLocators.login_button).click()
-        result = self.page.locator(LoginPageLocators.error_invalid_data)
-        expect(result).to_have_text(LoginPageErrors.error_unfilled_fields)
-
-
+        error_message2 = self.page.locator(LoginPageLocators.error_data)
+        expect(error_message2).to_have_text(LoginPageErrors.error_unfilled_fields)
 
