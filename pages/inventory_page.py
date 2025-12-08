@@ -28,3 +28,10 @@ class InventoryPage(BasePage):
         cart_button = self.page.locator(InventoryPageLocators.cart_button)
         expect(cart_button).to_be_visible()
         expect(cart_button).to_be_enabled()
+        cart_button.click()
+
+    def add_to_cart(self, card_index):
+        product_card = self.page.locator(InventoryPageLocators.product_card).nth(card_index)
+        expect(product_card).to_be_visible()
+        expect(product_card).to_be_enabled()
+        product_card.locator(InventoryPageLocators.add_to_cart_button).click()
