@@ -1,0 +1,13 @@
+from pages.inventory_page import InventoryPage
+
+def test_verify_products_count(login):
+    inventory_page = InventoryPage(login)
+    inventory_page.verify_products_count(6)
+
+def test_verify_product_card_elements(login):
+    inventory_page = InventoryPage(login)
+    inventory_page.verify_product_card(0)
+
+def test_verify_cart_button(login):
+    inventory_page = InventoryPage(login)
+    inventory_page.verify_cart_button()
