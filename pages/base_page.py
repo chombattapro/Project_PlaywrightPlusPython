@@ -1,9 +1,9 @@
-class BasePage:
-    base_url = "https://www.saucedemo.com"
+BASE_URL = "https://www.saucedemo.com"
 
-    def __init__(self, page, url=None):
+class BasePage:
+    def __init__(self, page):
         self.page = page
-        self.url = url or self.base_url
+        self.url = BASE_URL
 
     def open(self):
         if self.url:
