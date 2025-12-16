@@ -7,8 +7,8 @@ class LoginPageLocators:
 
 class InventoryPageLocators:
     product_card = "inventory-item"
-    product_title = ".inventory_item_name[data-test='inventory-item-name']"  # Заголовок
-    product_price = ".inventory_item_price[data-test='inventory-item-price']"  # Цена
+    product_title = "inventory-item-name"  # Заголовок
+    product_price = "inventory-item-price"  # Цена
     add_to_cart_button = "button[data-test^='add-to-cart-']"
 
     cart_button = "shopping-cart-link"
