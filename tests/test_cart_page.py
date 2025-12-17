@@ -1,7 +1,10 @@
+import pytest
 from playwright.sync_api import Page
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 
+@pytest.mark.cart
+@pytest.mark.smoke
 def test_verify_successful_purchase(login, page: Page):
     inventory_page = InventoryPage(login)
     products = [0, 1, 2, 3]
