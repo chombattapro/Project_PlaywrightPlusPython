@@ -9,16 +9,16 @@ class LoginPage(BasePage):
     def __init__(self, page):
         super().__init__(page)
         self.locators = LoginPageLocators
+        self.data = LoginPageData
+        self.errors = LoginPageErrors
         self.username_input = self.page.get_by_test_id(self.locators.username_input)
         self.password_input = self.page.get_by_test_id(self.locators.password_input)
         self.login_button = self.page.get_by_test_id(self.locators.login_button)
         self.error_data = self.page.get_by_test_id(self.locators.error_data)
-        self.data = LoginPageData
         self.valid_username = self.data.valid_username
         self.valid_password = self.data.valid_password
         self.invalid_username = self.data.invalid_username
         self.invalid_password = self.data.invalid_password
-        self.errors = LoginPageErrors
         self.error_invalid_data = self.errors.error_invalid_data
         self.error_unfilled_fields = self.errors.error_unfilled_fields
 
